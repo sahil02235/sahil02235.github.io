@@ -6,14 +6,14 @@
   <title>Sahil | Director of Research, Qure AI</title>
   <meta name="description" content="Sahil, Director of Research at Qure AI. Research in medical vision-language models, reinforcement learning, multimodal reasoning, and clinical validation.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23222222'/%3E%3Ctext x='11' y='29' font-size='28' fill='white'%3ES%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=20261007">
+  <link rel="stylesheet" href="style.css?v=research-20261007">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <h1>Sahil</h1>
     <p class="position">Director of Research, Qure AI</p>
-    <p class="location">Bengaluru, India</p>
+    <p class="location">Medical AI · Vision-language models · Reinforcement learning<br>Bengaluru, India</p>
     <ul class="links" aria-label="Profile and contact links">
       <li><a href="mailto:sahiliiserb@gmail.com">Email</a></li>
       <li><a href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar</a></li>
@@ -22,52 +22,100 @@
     </ul>
     <nav aria-label="Sections">
       <a href="#recent-work">Recent work</a>
-      <a href="#research">Research</a>
+      <a href="#research">Research questions</a>
       <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
+
     </nav>
   </header>
 
   <main id="main">
-    <p>I am Director of Research at Qure AI. My research focuses on vision-language models (VLMs), reinforcement learning, and multimodal reasoning for medical imaging. I work on CT and X-ray interpretation, including radiology report generation and disease-specific detection.</p>
-    <p>My work spans data curation, pretraining, supervised fine-tuning, reinforcement-learning-based post-training, clinical validation, and deployment. Earlier research includes inverse reinforcement learning, generative modeling, robust graph neural networks, and uncertainty estimation in medical image segmentation.</p>
+    <div class="introduction">
+      <p>I am Director of Research at Qure AI, working on medical representation learning, multimodal pretraining, and reinforcement learning. I study how image and report supervision shape clinical recognition, reasoning, and uncertainty. My work spans model development, clinical evaluation, and deployment for CT and X-ray interpretation.</p>
+    </div>
 
     <section id="recent-work" aria-labelledby="recent-work-heading">
-      <h2 id="recent-work-heading">Recent work</h2>
-      <p>My recent work studies how radiology-specific supervision shapes representations of medical images and reports. In Med-AR, we investigate autoregressive pretraining for recognition of rare findings and uncertainty-aware prediction. In QureRadEmbed, we study how explicit clinical attributes and reasoning supervision can make report embeddings sensitive to anatomical and diagnostic differences.</p>
+      <div class="section-heading"><h2 id="recent-work-heading">Recent work</h2><span>Preprints · 2026</span></div>
+      <p class="section-intro">Two complementary directions: learning visual representations for rare-finding recognition, and learning report representations that preserve clinical distinctions.</p>
 
-      <article aria-labelledby="qureradembed-heading">
+      <article class="paper" aria-labelledby="qureradembed-heading">
+        <p class="paper-date">27 September 2026 · arXiv:2609.33075</p>
         <h3 id="qureradembed-heading"><a href="https://arxiv.org/abs/2609.33075">QureRadEmbed: Structuring Radiological Similarity through Attribute and Reasoning Supervision</a></h3>
-        <p>Janhavi Prabhu*, <strong>Sahil*</strong>, Shivam Ashok Shukla, Manoj Tadepalli.<br><span class="venue">arXiv preprint · 27 September 2026. *Co-first authors.</span> <a href="https://arxiv.org/pdf/2609.33075">PDF</a></p>
-        <p>We adapt a 4B text encoder to radiology using RadSim, which converts clinical attributes into deterministic ranking targets, and RadThought, which aligns reports with hierarchical evidence and reasoning descriptions. A three-stage curriculum teaches distinctions such as laterality, location, severity, and certainty. On external CT findings-to-impression retrieval, Recall@1 improves from 31.4% to 42.9% relative to the backbone. The resulting embeddings support retrieval, finding extraction, and efficient report comparison; generative evaluators remain stronger on some expert-rated and subtle-error tasks.</p>
+        <p class="authors">Janhavi Prabhu*, <strong>Sahil*</strong>, Shivam Ashok Shukla, Manoj Tadepalli. <span>*Co-first authors.</span></p>
+        <div class="paper-links"><a href="https://arxiv.org/abs/2609.33075">arXiv</a><a href="https://arxiv.org/pdf/2609.33075">PDF</a><a href="https://arxiv.org/html/2609.33075v1">Full text</a></div>
+        <p>We adapt Qwen3-Embedding-4B with RadSim’s deterministic clinical-attribute ranking targets and RadThought’s hierarchical evidence supervision. Three training stages combine report alignment, single-attribute contrasts, and cross-attribute calibration. The objective is to retain distinctions in location, laterality, severity, and certainty within reusable report embeddings.</p>
+        <div class="paper-evidence">
+          <figure>
+            <a class="figure-link" href="assets/qureradembed-method.svg" target="_blank" rel="noopener"><img src="assets/qureradembed-method.svg" width="476" height="367" alt="QureRadEmbed training pipeline: attribute extraction, RadSim scoring, report and reasoning supervision, and contrastive objectives train one shared encoder. Open full-size figure." loading="lazy"></a>
+            <figcaption>Training supervision and shared encoder. <a href="https://arxiv.org/html/2609.33075v1#S2.F2">Prabhu, Sahil et al., Fig. 2</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Select figure to enlarge.</figcaption>
+          </figure>
+          <div class="results">
+            <div class="table-scroll" role="region" tabindex="0" aria-label="Benchmark results">
+            <table>
+              <caption>External report retrieval<span>Findings → impression · Recall@1 (%) · higher is better</span></caption>
+              <thead><tr><th scope="col">Dataset</th><th scope="col">Qwen3-4B</th><th scope="col">QureRadEmbed</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Open-I</th><td>6.6</td><td><strong>10.5</strong></td></tr>
+                <tr><th scope="row">Testing XR</th><td>5.7</td><td><strong>12.4</strong></td></tr>
+                <tr><th scope="row">Testing CT</th><td>31.4</td><td><strong>42.9</strong></td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="evidence-note">Selected pools from <a href="https://arxiv.org/html/2609.33075v1#S3.T2">Table 2</a>; matched retrieval direction and candidate pools.</p>
+            <p class="limitation"><strong>Scope.</strong> Retrieval gains do not establish equivalent clinical judgment: generative evaluation remains stronger on some expert-rated and subtle-error tasks.</p>
+          </div>
+        </div>
       </article>
 
-      <article aria-labelledby="medar-heading">
+      <article class="paper" aria-labelledby="medar-heading">
+        <p class="paper-date">24 September 2026 · arXiv:2609.29156</p>
         <h3 id="medar-heading"><a href="https://arxiv.org/abs/2609.29156">Med-AR: Autoregressive Vision-Language Pretraining for Long-Tailed Chest X-Ray Classification and Uncertainty-Aware Evaluation</a></h3>
-        <p>Janhavi Prabhu, <strong>Sahil</strong>, Akshay V, Shivam Shukla, Manoj Tadepalli, Preetham Putha.<br><span class="venue">arXiv preprint · 24 September 2026.</span> <a href="https://arxiv.org/pdf/2609.29156">PDF</a></p>
-        <p>We pretrain 8B and 2B autoregressive VLMs with structured radiology reports, abnormality-focused text, and region annotations, then evaluate their visual encoders using a common ML-Decoder classification head. Experiments on PadChest, MIMIC-CXR, and CheXpert examine both long-tailed classification and selective prediction. Med-AR-8B raises MIMIC-CXR tail-label mean AUPRC from 0.1033 to 0.1441 compared with Med-CLIP. Both variants improve selective prediction on the public datasets, while results on internal data remain metric-dependent.</p>
+        <p class="authors">Janhavi Prabhu, <strong>Sahil</strong>, Akshay V, Shivam Shukla, Manoj Tadepalli, Preetham Putha.</p>
+        <div class="paper-links"><a href="https://arxiv.org/abs/2609.29156">arXiv</a><a href="https://arxiv.org/pdf/2609.29156">PDF</a><a href="https://arxiv.org/html/2609.29156v1">Full text</a></div>
+        <p>We pretrain 8B and 2B VLMs with structured reports, abnormality-focused text, and region annotations. Their InternViT encoders transfer to a shared ML-Decoder architecture for long-tailed classification. Evaluation measures both discrimination and uncertainty ranking.</p>
+        <p class="contribution"><strong>My contribution:</strong> model training, dataset preparation, label extraction, and manuscript writing.</p>
+        <div class="paper-evidence">
+          <figure>
+            <a class="figure-link" href="assets/medar-method.png" target="_blank" rel="noopener"><img src="assets/medar-method.png" width="471" height="354" alt="Med-AR architecture: tiled chest X-rays feed an InternViT encoder and language decoder during pretraining; the visual encoder then transfers to ML-Decoder for multi-label classification. Open full-size figure." loading="lazy"></a>
+            <figcaption>Autoregressive pretraining and downstream transfer. <a href="https://arxiv.org/html/2609.29156v1#S3.F1">Prabhu, Sahil et al., Fig. 1</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Select figure to enlarge.</figcaption>
+          </figure>
+          <div class="results">
+            <div class="table-scroll" role="region" tabindex="0" aria-label="Benchmark results">
+            <table>
+              <caption>Long-tail recognition and uncertainty<span>Same downstream ML-Decoder architecture</span></caption>
+              <thead><tr><th scope="col">Dataset</th><th scope="col">Med-CLIP</th><th scope="col">AR-8B</th><th scope="col">AR-2B</th></tr></thead>
+              <tbody>
+                <tr class="metric-row"><th colspan="4" scope="rowgroup">Tail-label mean AUPRC · higher is better</th></tr>
+                <tr><th scope="row">MIMIC-CXR</th><td>0.1033</td><td><strong>0.1441</strong></td><td>0.1185</td></tr>
+                <tr><th scope="row">PadChest</th><td>0.4762</td><td>0.4940</td><td><strong>0.5072</strong></td></tr>
+                <tr><th scope="row">CheXpert</th><td>0.0922</td><td><strong>0.1151</strong></td><td>0.0829</td></tr>
+                <tr><th scope="row">Internal</th><td><strong>0.1897</strong></td><td>0.1639</td><td>0.1689</td></tr>
+              </tbody>
+              <tbody>
+                <tr class="metric-row"><th colspan="4" scope="rowgroup">Overall EAURC · lower is better</th></tr>
+                <tr><th scope="row">MIMIC-CXR</th><td>0.196</td><td><strong>0.169</strong></td><td>0.179</td></tr>
+                <tr><th scope="row">Internal</th><td><strong>0.014</strong></td><td>0.070</td><td>0.073</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="evidence-note">Selected results from <a href="https://arxiv.org/html/2609.29156v1#S5.T3">Table 3</a> and <a href="https://arxiv.org/html/2609.29156v1#S5.T5">Table 5</a>. EAURC: excess area under the risk–coverage curve.</p>
+            <p class="limitation"><strong>Scope.</strong> Gains depend on dataset and metric; Med-CLIP retains advantages on internal data. The comparison evaluates complete pretraining recipes.</p>
+          </div>
+        </div>
       </article>
     </section>
 
     <section id="research" aria-labelledby="research-heading">
-      <h2 id="research-heading">Research</h2>
-      <h3>Medical vision-language models</h3>
-      <p>I develop VLMs for radiology auto-reporting and detection of pulmonary hypertension, COPD, lung cancer, and heart failure. This includes training on more than 10 million X-rays, with Qwen2.5-VL, InternVL3, Florence-VL, and LLaVA backbones, using MS-Swift and custom multimodal data pipelines.</p>
-      <h3>Reinforcement learning and post-training</h3>
-      <p>I work on offline and online post-training pipelines using DPO, GRPO, MPO, and GSPO to improve clinical reasoning, disease identification, and structured report generation. Distributed training work includes pipelines built with verl and NVIDIA NeMo-RL.</p>
-      <h3>Clinical evaluation and deployment</h3>
-      <p>My work includes multicenter validation against spirometry and specialist review, and deployment of pulmonary hypertension and COPD models at Merck and CIPLA sites. I also developed qMSK, a system for fracture detection and classification deployed at Massachusetts General Hospital and Erasmus University.</p>
-      <h3>Prior research</h3>
-      <ul>
-        <li><strong>Inverse reinforcement learning:</strong> learning from human feedback, with a focus on convergence and explainability.</li>
-        <li><strong>Robustness and uncertainty:</strong> graph neural networks with capsule networks and Bayesian methods; uncertainty estimation in medical segmentation using PhiSeg, Stochastic Segmentation Networks, and the Probabilistic U-Net.</li>
-        <li><strong>Generative vision:</strong> GAN-based image synthesis, face frontalization, multi-view generation, and super-resolution using deep unfolding and vector-quantized models.</li>
-      </ul>
+      <div class="section-heading"><h2 id="research-heading">Research questions</h2></div>
+      <dl class="research-questions">
+        <div><dt>What supervision helps models recognize rare findings?</dt><dd>I study radiology-native pretraining with reports, structured findings, and region annotations, evaluating transfer across prevalence groups and datasets.</dd></div>
+        <div><dt>What should clinical similarity preserve?</dt><dd>I investigate representations that distinguish anatomical location, severity, certainty, and contradictory findings while retaining useful disease relationships.</dd></div>
+        <div><dt>How can post-training improve clinical reasoning?</dt><dd>My work includes DPO, GRPO, MPO, and GSPO pipelines for disease identification and structured reporting, using verl and NVIDIA NeMo-RL.</dd></div>
+      </dl>
     </section>
 
     <section id="publications" aria-labelledby="publications-heading">
-      <h2 id="publications-heading">Publications</h2>
+      <div class="section-heading"><h2 id="publications-heading">Earlier publications</h2></div>
       <p>See <a href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar</a> for publication records and citations.</p>
       <h3>Peer-reviewed papers</h3>
       <ol class="publications">
@@ -87,52 +135,17 @@
     </section>
 
     <section id="experience" aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Experience</h2>
+      <div class="section-heading"><h2 id="experience-heading">Experience</h2></div>
       <dl class="experience">
-        <div>
-          <dt>Qure AI <span class="dates">May 2022 – present</span></dt>
-          <dd><strong>Current role: Director of Research.</strong> Leading a team of five across data curation, model training, post-training, clinical validation, and deployment of CT and X-ray VLMs.</dd>
-        </div>
-        <div>
-          <dt>Intel Corporation <span class="dates">May 2021 – May 2022</span></dt>
-          <dd>Graduate Technical Intern, Client Computing Group. Machine learning and deep learning for computer vision and natural language processing.</dd>
-        </div>
-        <div>
-          <dt>Robert Bosch Engineering and Business Solutions <span class="dates">Jan 2021 – May 2021</span></dt>
-          <dd>Research Intern. Synthetic image generation for robotic vision using FineGAN and MixAndMatch.</dd>
-        </div>
-        <div>
-          <dt>Jio AI and Center of Excellence <span class="dates">May 2020 – Aug 2020</span></dt>
-          <dd>Computer Vision Summer Intern. GAN-based face frontalization, multi-view generation using HoloGAN, and barcode super-resolution using deep unfolding networks.</dd>
-        </div>
+        <div><dt>Qure AI <span class="dates">May 2022 – present</span></dt><dd><strong>Director of Research</strong> (current role). Medical VLM training, post-training, clinical validation, and deployment for CT and X-ray interpretation.</dd></div>
+        <div><dt>Intel Corporation <span class="dates">May 2021 – May 2022</span></dt><dd>Graduate Technical Intern, Client Computing Group. Computer vision and natural language processing.</dd></div>
+        <div><dt>Earlier research <span class="dates">2020 – 2022</span></dt><dd>University of Alberta: inverse reinforcement learning. TU Darmstadt, MEC Lab: robust GNNs and segmentation uncertainty. Simula: generative modeling. Industry internships at Bosch and Jio AI; earlier research at IISc Bengaluru and ISI Kolkata.</dd></div>
       </dl>
-      <h3>Academic research</h3>
-      <dl class="experience">
-        <div>
-          <dt>University of Alberta <span class="dates">Aug 2021 – May 2022</span></dt>
-          <dd>Research Intern. Inverse reinforcement learning from human feedback.</dd>
-        </div>
-        <div>
-          <dt>Technical University of Darmstadt, MEC Lab <span class="dates">Dec 2020 – June 2021</span></dt>
-          <dd>Long-Term Project Student. Robust graph neural networks and uncertainty estimation in medical image segmentation.</dd>
-        </div>
-        <div>
-          <dt>Simula Research Laboratory <span class="dates">Mar 2020 – Sep 2020</span></dt>
-          <dd>Long-Term Project Student. ACGAN, BigGAN, StyleGAN, and U-Net GAN for image synthesis and classification on CIFAR-10 and Caltech-101.</dd>
-        </div>
-        <div>
-          <dt>Indian Institute of Science, Bengaluru</dt>
-          <dd>Computer Vision Summer Intern. Monocular depth estimation and unsupervised ego-motion learning using Struct2Depth, with modifications based on DeepCaps, under Dr. Ragu Krishnapuram.</dd>
-        </div>
-        <div>
-          <dt>Indian Statistical Institute, Kolkata</dt>
-          <dd>Summer Research Intern. Clustering, DC-GAN and W-GAN on MNIST, and super-resolution using SRGAN, VQ-VAE, VQ-VAE-2, and AE-GAN.</dd>
-        </div>
-      </dl>
+      <p><a href="Sahil-CV.pdf">Full experience and background in my CV (PDF)</a>.</p>
     </section>
 
     <section id="education" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
+      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
       <p><strong>Indian Institute of Science Education and Research Bhopal</strong><br>BS-MS, Electrical Engineering and Computer Science, July 2017 – June 2022.<br>DST-INSPIRE Scholarship.</p>
     </section>
   </main>
