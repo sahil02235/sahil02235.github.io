@@ -54,8 +54,6 @@ tbody th { font-weight: 400; }
 td strong { color: var(--blue); font-weight: 650; }
 .evidence-note, .limitation { font-size: .875rem; line-height: 1.6; color: var(--muted); margin-top: 14px; margin-bottom: 0; }
 .limitation strong { color: var(--ink); }
-.research-questions { margin: 0; display: grid; gap: 20px; }
-.research-questions dt { font-size: 1.0625rem; }
 ul, ol { padding-left: 24px; }
 li { margin-bottom: 9px; }
 .publications li { margin-bottom: 18px; padding-left: 3px; }
