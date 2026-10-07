@@ -21,6 +21,7 @@
       <li><a href="Sahil-CV.pdf">CV (PDF)</a></li>
     </ul>
     <nav aria-label="Sections">
+      <a href="#recent-work">Recent work</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
@@ -31,6 +32,23 @@
   <main id="main">
     <p>I am Director of Research at Qure AI. My research focuses on vision-language models (VLMs), reinforcement learning, and multimodal reasoning for medical imaging. I work on CT and X-ray interpretation, including radiology report generation and disease-specific detection.</p>
     <p>My work spans data curation, pretraining, supervised fine-tuning, reinforcement-learning-based post-training, clinical validation, and deployment. Earlier research includes inverse reinforcement learning, generative modeling, robust graph neural networks, and uncertainty estimation in medical image segmentation.</p>
+
+    <section id="recent-work" aria-labelledby="recent-work-heading">
+      <h2 id="recent-work-heading">Recent work</h2>
+      <p>My recent work studies how radiology-specific supervision shapes representations of medical images and reports. In Med-AR, we investigate autoregressive pretraining for recognition of rare findings and uncertainty-aware prediction. In QureRadEmbed, we study how explicit clinical attributes and reasoning supervision can make report embeddings sensitive to anatomical and diagnostic differences.</p>
+
+      <article aria-labelledby="qureradembed-heading">
+        <h3 id="qureradembed-heading"><a href="https://arxiv.org/abs/2609.33075">QureRadEmbed: Structuring Radiological Similarity through Attribute and Reasoning Supervision</a></h3>
+        <p>Janhavi Prabhu*, <strong>Sahil*</strong>, Shivam Ashok Shukla, Manoj Tadepalli.<br><span class="venue">arXiv preprint · 27 September 2026. *Co-first authors.</span> <a href="https://arxiv.org/pdf/2609.33075">PDF</a></p>
+        <p>We adapt a 4B text encoder to radiology using RadSim, which converts clinical attributes into deterministic ranking targets, and RadThought, which aligns reports with hierarchical evidence and reasoning descriptions. A three-stage curriculum teaches distinctions such as laterality, location, severity, and certainty. On external CT findings-to-impression retrieval, Recall@1 improves from 31.4% to 42.9% relative to the backbone. The resulting embeddings support retrieval, finding extraction, and efficient report comparison; generative evaluators remain stronger on some expert-rated and subtle-error tasks.</p>
+      </article>
+
+      <article aria-labelledby="medar-heading">
+        <h3 id="medar-heading"><a href="https://arxiv.org/abs/2609.29156">Med-AR: Autoregressive Vision-Language Pretraining for Long-Tailed Chest X-Ray Classification and Uncertainty-Aware Evaluation</a></h3>
+        <p>Janhavi Prabhu, <strong>Sahil</strong>, Akshay V, Shivam Shukla, Manoj Tadepalli, Preetham Putha.<br><span class="venue">arXiv preprint · 24 September 2026.</span> <a href="https://arxiv.org/pdf/2609.29156">PDF</a></p>
+        <p>We pretrain 8B and 2B autoregressive VLMs with structured radiology reports, abnormality-focused text, and region annotations, then evaluate their visual encoders using a common ML-Decoder classification head. Experiments on PadChest, MIMIC-CXR, and CheXpert examine both long-tailed classification and selective prediction. Med-AR-8B raises MIMIC-CXR tail-label mean AUPRC from 0.1033 to 0.1441 compared with Med-CLIP. Both variants improve selective prediction on the public datasets, while results on internal data remain metric-dependent.</p>
+      </article>
+    </section>
 
     <section id="research" aria-labelledby="research-heading">
       <h2 id="research-heading">Research</h2>
