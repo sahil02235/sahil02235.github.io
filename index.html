@@ -37,40 +37,60 @@
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23222222'/%3E%3Ctext x='11' y='29' font-size='28' fill='white'%3ES%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=research-20261007">
+  <link rel="stylesheet" href="style.css?v=academic-20261013">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <h1>Sahil</h1>
-    <p class="position">Director of Research, Qure AI</p>
-    <p class="location">Medical AI · Vision-language models · Reinforcement learning<br>Bengaluru, India</p>
-    <ul class="links" aria-label="Profile and contact links">
-      <li><a href="mailto:sahiliiserb@gmail.com">Email</a></li>
-      <li><a href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar</a></li>
-      <li><a href="https://github.com/sahil02235">GitHub</a></li>
-      <li><a href="Sahil-CV.pdf">CV (PDF)</a></li>
-    </ul>
-    <nav aria-label="Sections">
-      <a href="#recent-work">Recent work</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-
-    </nav>
-  </header>
-
-  <main id="main">
-    <div class="introduction">
-      <p>I am Director of Research at Qure AI, working on medical representation learning, multimodal pretraining, and reinforcement learning. I study how image and report supervision shape clinical recognition, reasoning, and uncertainty. My work spans model development, clinical evaluation, and deployment for CT and X-ray interpretation.</p>
-      <p>I graduated from IISER Bhopal (IISERB) with a BS-MS in Electrical Engineering and Computer Science in 2022.</p>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#about" aria-label="Sahil, home">Sahil<span>Research</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#recent-work">Recent work</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-
+  </header>
+  <main id="main">
+    <section class="hero" id="about" aria-labelledby="name-heading">
+      <div class="hero-primary">
+        <p class="eyebrow">Medical AI · Multimodal learning</p>
+        <h1 id="name-heading">Sahil<span class="name-period" aria-hidden="true">.</span></h1>
+        <p class="position">Director of Research <span class="position-divider" aria-hidden="true">/</span> <span>Qure AI</span></p>
+        <div class="introduction">
+          <p>I work on medical representation learning, multimodal pretraining, and reinforcement learning. My research studies how image and report supervision shape clinical recognition, reasoning, and uncertainty.</p>
+          <p>At Qure AI, my work spans model development, clinical evaluation, and deployment for CT and X-ray interpretation.</p>
+        </div>
+        <ul class="profile-links" aria-label="Profile and contact links">
+          <li><a class="primary-link" href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a></li>
+          <li><a href="Sahil-CV.pdf">Curriculum vitae <span class="file-label">PDF</span></a></li>
+          <li><a href="https://github.com/sahil02235">GitHub <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+      <aside class="profile-aside" aria-label="Academic profile">
+        <p class="eyebrow">Research profile</p>
+        <dl class="profile-facts">
+          <div><dt>Current affiliation</dt><dd>Qure AI<span>Bengaluru, India</span></dd></div>
+          <div><dt>Education</dt><dd>IISER Bhopal <span>BS-MS, EECS · 2017–2022</span></dd></div>
+          <div><dt>Research areas</dt><dd class="research-areas">Medical vision-language models<br>Representation learning<br>Reinforcement learning</dd></div>
+        </dl>
+        <a class="aside-contact" href="mailto:sahiliiserb@gmail.com">sahiliiserb@gmail.com <span aria-hidden="true">↗</span></a>
+      </aside>
+      <p class="alumni-note">Alumnus of the Indian Institute of Science Education and Research Bhopal (IISERB).</p>
+    </section>
+    <div class="work-index" aria-label="Latest paper shortcuts">
+      <p class="eyebrow">Latest preprints<span>September 2026</span></p>
+      <a href="#qureradembed"><span class="work-index-name">QureRadEmbed <span aria-hidden="true">↗</span></span><span>Clinically structured report embeddings</span></a>
+      <a href="#medar"><span class="work-index-name">Med-AR <span aria-hidden="true">↗</span></span><span>Autoregressive medical vision-language pretraining</span></a>
+    </div>
     <section id="recent-work" aria-labelledby="recent-work-heading">
-      <div class="section-heading"><h2 id="recent-work-heading">Recent work</h2><span>Preprints · 2026</span></div>
+      <div class="section-heading"><div><p class="eyebrow">Selected research</p><h2 id="recent-work-heading">Recent work</h2></div><span class="section-aside">Preprints · 2026</span></div>
       <p class="section-intro">Two complementary directions: learning visual representations for rare-finding recognition, and learning report representations that preserve clinical distinctions.</p>
 
-      <article class="paper" aria-labelledby="qureradembed-heading">
-        <p class="paper-date">27 September 2026 · arXiv:2609.33075</p>
+      <article class="paper" id="qureradembed" aria-labelledby="qureradembed-heading">
+        <div class="paper-meta"><span class="paper-topic">Report representation learning</span><p class="paper-date">27 Sep 2026 · arXiv:2609.33075</p></div>
         <h3 id="qureradembed-heading"><a href="https://arxiv.org/abs/2609.33075">QureRadEmbed: Structuring Radiological Similarity through Attribute and Reasoning Supervision</a></h3>
         <p class="authors">Janhavi Prabhu*, <strong>Sahil*</strong>, Shivam Ashok Shukla, Manoj Tadepalli. <span>*Co-first authors.</span></p>
         <div class="paper-links"><a href="https://arxiv.org/abs/2609.33075">arXiv</a><a href="https://arxiv.org/pdf/2609.33075">PDF</a><a href="https://arxiv.org/html/2609.33075v1">Full text</a></div>
@@ -98,8 +118,8 @@
         </div>
       </article>
 
-      <article class="paper" aria-labelledby="medar-heading">
-        <p class="paper-date">24 September 2026 · arXiv:2609.29156</p>
+      <article class="paper" id="medar" aria-labelledby="medar-heading">
+        <div class="paper-meta"><span class="paper-topic">Vision-language pretraining</span><p class="paper-date">24 Sep 2026 · arXiv:2609.29156</p></div>
         <h3 id="medar-heading"><a href="https://arxiv.org/abs/2609.29156">Med-AR: Autoregressive Vision-Language Pretraining for Long-Tailed Chest X-Ray Classification and Uncertainty-Aware Evaluation</a></h3>
         <p class="authors">Janhavi Prabhu, <strong>Sahil</strong>, Akshay V, Shivam Shukla, Manoj Tadepalli, Preetham Putha.</p>
         <div class="paper-links"><a href="https://arxiv.org/abs/2609.29156">arXiv</a><a href="https://arxiv.org/pdf/2609.29156">PDF</a><a href="https://arxiv.org/html/2609.29156v1">Full text</a></div>
@@ -137,7 +157,7 @@
     </section>
 
     <section id="publications" aria-labelledby="publications-heading">
-      <div class="section-heading"><h2 id="publications-heading">Earlier publications</h2></div>
+      <div class="section-heading"><div><p class="eyebrow">Research record</p><h2 id="publications-heading">Publications &amp; patents</h2></div><a class="section-aside" href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a></div>
       <p>See <a href="https://scholar.google.com/citations?user=Ycqb7dAAAAAJ">Google Scholar</a> for publication records and citations.</p>
       <h3>Peer-reviewed papers</h3>
       <ol class="publications">
@@ -157,7 +177,7 @@
     </section>
 
     <section id="experience" aria-labelledby="experience-heading">
-      <div class="section-heading"><h2 id="experience-heading">Experience</h2></div>
+      <div class="section-heading"><div><p class="eyebrow">Appointments</p><h2 id="experience-heading">Experience</h2></div></div>
       <dl class="experience">
         <div><dt>Qure AI <span class="dates">May 2022 – present</span></dt><dd><strong>Director of Research</strong> (current role). Medical VLM training, post-training, clinical validation, and deployment for CT and X-ray interpretation.</dd></div>
         <div><dt>Intel Corporation <span class="dates">May 2021 – May 2022</span></dt><dd>Graduate Technical Intern, Client Computing Group. Computer vision and natural language processing.</dd></div>
@@ -167,10 +187,16 @@
     </section>
 
     <section id="education" aria-labelledby="education-heading">
-      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
-      <p><strong>Indian Institute of Science Education and Research Bhopal (IISER Bhopal / IISERB)</strong><br>BS-MS, Electrical Engineering and Computer Science, July 2017 – June 2022.<br>DST-INSPIRE Scholarship.</p>
+      <div class="section-heading"><div><p class="eyebrow">Academic background</p><h2 id="education-heading">Education</h2></div></div>
+      <div class="education-record">
+        <div><h3>IISER Bhopal</h3><p class="dates">July 2017 – June 2022</p></div>
+        <div><p class="degree">BS-MS · Electrical Engineering and Computer Science</p><p>Indian Institute of Science Education and Research Bhopal (IISERB)</p><p class="scholarship">DST-INSPIRE Scholarship</p></div>
+      </div>
     </section>
   </main>
-  <footer>Contact: <a href="mailto:sahiliiserb@gmail.com">sahiliiserb@gmail.com</a></footer>
+  <footer id="contact">
+    <div class="footer-main"><div><p class="eyebrow">Contact</p><h2>Get in touch</h2><p>For research correspondence and collaboration.</p></div><a class="contact-email" href="mailto:sahiliiserb@gmail.com">sahiliiserb@gmail.com <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-bottom"><span>Sahil · Director of Research, Qure AI</span><span>Updated October 2026 <span aria-hidden="true">·</span> <a href="#about">Back to top ↑</a></span></div>
+  </footer>
 </body>
 </html>
